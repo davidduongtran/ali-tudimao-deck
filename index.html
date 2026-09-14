@@ -164,36 +164,184 @@
       overflow: hidden;
       margin-bottom: 40px;
     }
+        /* --- INSPIRATION STRIP & BRAND STORY STYLING (CLIENT REQUEST) --- */
     .option-banner {
-      padding: 24px 32px;
-      background: #FAFCFF;
+      padding: 28px 32px 24px;
+      background: #FFFFFF;
       border-bottom: 1px solid var(--border);
       display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .option-header-top {
+      display: flex;
       justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      align-items: flex-start;
       gap: 16px;
+      width: 100%;
     }
     .option-title-group h2 {
       font-size: 26px;
       font-weight: 900;
       color: var(--indigo);
       letter-spacing: -0.5px;
+      margin-bottom: 4px;
     }
-    .option-title-group span {
+    .insp-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-size: 14px;
       color: #64748B;
       font-weight: 600;
     }
-    .option-badge {
-      font-size: 12px;
+    .insp-meta-label {
+      color: #94A3B8;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .insp-meta-text {
+      color: var(--indigo);
+      font-weight: 700;
+    }
+
+    /* Reference Logos Strip (Client Red Box Request) */
+    .inspiration-cards-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .insp-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #F8FAFC;
+      border: 1px solid rgba(35, 78, 140, 0.12);
+      border-radius: 12px;
+      padding: 10px 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+      flex: 1 1 320px;
+      max-width: 560px;
+    }
+    .insp-card:hover {
+      border-color: var(--coral);
+      background: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(245, 98, 61, 0.08);
+      transform: translateY(-1px);
+    }
+    .insp-card-logo {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      background: #FFFFFF;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .insp-card-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .insp-card-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .insp-brand-name {
+      font-size: 13.5px;
       font-weight: 800;
-      padding: 6px 16px;
+      color: var(--indigo);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .insp-brand-name .insp-badge-mini {
+      font-size: 10px;
+      font-weight: 700;
+      background: rgba(35, 78, 140, 0.08);
+      color: var(--indigo);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    .insp-brand-desc {
+      font-size: 12px;
+      color: #64748B;
+      line-height: 1.4;
+    }
+
+    /* Option Brand Story Section (Client Request 2) */
+    .option-brand-story {
+      background: linear-gradient(135deg, rgba(251, 244, 233, 0.75) 0%, rgba(255, 255, 255, 0.95) 100%);
+      border-left: 4px solid var(--coral);
+      border-top: 1px solid rgba(245, 98, 61, 0.15);
+      border-right: 1px solid rgba(245, 98, 61, 0.15);
+      border-bottom: 1px solid rgba(245, 98, 61, 0.15);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+    .story-header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .story-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--coral);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
       border-radius: 999px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      background: rgba(245, 98, 61, 0.12);
+      letter-spacing: 0.5px;
+    }
+    .story-headline {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--indigo);
+      letter-spacing: -0.2px;
+    }
+    .story-p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #334155;
+      margin: 0;
+    }
+    .story-tagline-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(245, 98, 61, 0.25);
+    }
+    .tagline-prefix {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       color: var(--coral);
+    }
+    .tagline-text {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--indigo);
+      font-style: italic;
     }
 
     /* 3 Standard Mandatory Sections */
@@ -787,10 +935,52 @@
     <div class="option-panel active" id="panel-opt1">
       <div class="option-card-main">
         <div class="option-banner">
-          <div class="option-title-group">
-            <h2>Option 1: La Bàn Tròn (Compass Ring)</h2>
-            <span>Cảm hứng: Duolingo × Minimalist Compass Badge</span>
+          <div class="option-header-top">
+            <div class="option-title-group">
+              <h2>Option 1: La Bàn Tròn (Compass Ring)</h2>
+              <div class="insp-meta-row">
+                <span class="insp-meta-label">Cảm hứng cốt lõi:</span>
+                <span class="insp-meta-text">Duolingo × Minimalist Compass Badge</span>
+              </div>
+            </div>
+            <span class="option-badge">App-First Mascot</span>
           </div>
+
+          <!-- KHU VỰC LOGO CẢM HỨNG (THEO YÊU CẦU CLIENT) -->
+          <div class="insp-section-container">
+            <span style="font-size:11px; font-weight:800; color:#64748B; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:8px;">
+              🔍 Logo & Thương Hiệu Truyền Cảm Hứng Trực Tiếp:
+            </span>
+            <div class="inspiration-cards-row">
+              <div class="insp-card">
+                <div class="insp-card-logo">
+                  <img src="brand_reference_logos/duolingo.svg" alt="Duolingo (Cú Duo)">
+                </div>
+                <div class="insp-card-text">
+                  <div class="insp-brand-name">
+                    <span>Duolingo (Cú Duo)</span>
+                    <span class="insp-badge-mini">Mascot Nhận Diện</span>
+                  </div>
+                  <div class="insp-brand-desc">Học hỏi: Linh vật hình học phẳng, mắt to tròn thân thiện, biểu cảm sống động tạo sự gắn kết cảm xúc tức thì trên App Icon.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CÂU CHUYỆN THƯƠNG HIỆU GỢI Ý (BRAND STORY) -->
+          <div class="option-brand-story">
+            <div class="story-header">
+              <span class="story-badge">📖 Gợi Ý Câu Chuyện Thương Hiệu</span>
+              <h4 class="story-headline">“Người Bạn Đồng Hành Không Bao Giờ Lạc Lối”</h4>
+            </div>
+            <p class="story-p">Ali không chỉ là chiếc la bàn định vị, mà là một sinh linh Thổ Địa dẫn đường với đôi tai vểnh thính nhạy và ánh mắt luôn ngập tràn tò mò. Được kết tinh từ tinh thần hiếu khách thuần khiết của người Việt, Ali luôn mở to mắt đón chào bước chân lữ khách phương xa. Dù bước chân bạn lạc vào ngõ cổ Hội An lung linh đèn lồng hay sương mây lãng đãng đỉnh đèo Mù Cang Chải, chiếc kim True North sắc cam trên đỉnh đầu Ali luôn kiên định chỉ về hướng an toàn và trải nghiệm bản địa đích thực.</p>
+            <div class="story-tagline-wrap">
+              <span class="tagline-prefix">Thông điệp cốt lõi:</span>
+              <span class="tagline-text">“Theo dấu Ali, chạm vào bản xứ.”</span>
+            </div>
+          </div>
+        </div>
+
         <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
         <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
           <div class="block-head" style="margin-bottom: 16px;">
@@ -847,8 +1037,6 @@
           </div>
         </div>
 
-          <span class="option-badge">App-First Mascot</span>
-        </div>
 
         <!-- Mục 1: Brand Lockup -->
         <div class="section-block">
@@ -919,10 +1107,64 @@
     <div class="option-panel" id="panel-opt2">
       <div class="option-card-main">
         <div class="option-banner">
-          <div class="option-title-group">
-            <h2>Option 2: Mèo = Pin Địa Điểm (Map Pin Cat)</h2>
-            <span>Cảm hứng: Grab / Google Maps Navigation Pin</span>
+          <div class="option-header-top">
+            <div class="option-title-group">
+              <h2>Option 2: Mèo = Pin Địa Điểm (Map Pin Cat)</h2>
+              <div class="insp-meta-row">
+                <span class="insp-meta-label">Cảm hứng cốt lõi:</span>
+                <span class="insp-meta-text">Grab × Google Maps Navigation Pin</span>
+              </div>
+            </div>
+            <span class="option-badge">Direct Navigation</span>
           </div>
+
+          <!-- KHU VỰC LOGO CẢM HỨNG (THEO YÊU CẦU CLIENT) -->
+          <div class="insp-section-container">
+            <span style="font-size:11px; font-weight:800; color:#64748B; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:8px;">
+              🔍 Logo & Thương Hiệu Truyền Cảm Hứng Trực Tiếp:
+            </span>
+            <div class="inspiration-cards-row">
+              <div class="insp-card">
+                <div class="insp-card-logo">
+                  <img src="brand_reference_logos/grab.svg" alt="Grab">
+                </div>
+                <div class="insp-card-text">
+                  <div class="insp-brand-name">
+                    <span>Grab</span>
+                    <span class="insp-badge-mini">Di Chuyển & Đô Thị</span>
+                  </div>
+                  <div class="insp-brand-desc">Học hỏi: Tinh thần di chuyển hiện đại, công nghệ tiện ích đô thị gần gũi, tốc độ và tối ưu UX thiết bị di động.</div>
+                </div>
+              </div>
+              <div class="insp-card">
+                <div class="insp-card-logo">
+                  <img src="brand_reference_logos/google_maps.svg" alt="Google Maps">
+                </div>
+                <div class="insp-card-text">
+                  <div class="insp-brand-name">
+                    <span>Google Maps</span>
+                    <span class="insp-badge-mini">Biểu Tượng Toàn Cầu</span>
+                  </div>
+                  <div class="insp-brand-desc">Học hỏi: Hình khối Giọt Nước (Map Pin) kinh điển thế giới — tạo phản xạ thị giác nhận diện 0.1s cho dịch vụ bản đồ & điều hướng.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CÂU CHUYỆN THƯƠNG HIỆU GỢI Ý (BRAND STORY) -->
+          <div class="option-brand-story">
+            <div class="story-header">
+              <span class="story-badge">📖 Gợi Ý Câu Chuyện Thương Hiệu</span>
+              <h4 class="story-headline">“Chiếc Ghim Định Vị Có Trái Tim”</h4>
+            </div>
+            <p class="story-p">Mỗi chuyến vi vu đều bắt đầu từ một dấu ghim nhỏ trên màn hình bản đồ số, nhưng kỷ niệm sâu đậm nhất lại nằm ở nụ cười nồng hậu của cô bán quán hè phố hay tách cà phê vợt sớm mai. Option 2 biến biểu tượng chiếc ghim công nghệ vô tri thành chú mèo Thổ Địa ấm áp: chóp tai mèo vểnh lên đón nhận mọi nhịp đập phố phường, sẵn sàng dẫn lối du khách đi sâu vào những ngõ ngách bản địa thân thương nhất.</p>
+            <div class="story-tagline-wrap">
+              <span class="tagline-prefix">Thông điệp cốt lõi:</span>
+              <span class="tagline-text">“Định vị điểm đến, mở lối niềm tin.”</span>
+            </div>
+          </div>
+        </div>
+
         <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
         <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
           <div class="block-head" style="margin-bottom: 16px;">
@@ -979,8 +1221,6 @@
           </div>
         </div>
 
-          <span class="option-badge">Direct Navigation</span>
-        </div>
 
         <!-- Mục 1: Brand Lockup -->
         <div class="section-block">
@@ -1051,10 +1291,52 @@
     <div class="option-panel" id="panel-opt3">
       <div class="option-card-main">
         <div class="option-banner">
-          <div class="option-title-group">
-            <h2>Option 3: Một Nét Liền · Hồn Việt Cách Tân (Vietnamese Monoline)</h2>
-            <span>Cảm hứng: Airbnb Bélo × Xoáy Má Dân Gian & Búp Sen Việt</span>
+          <div class="option-header-top">
+            <div class="option-title-group">
+              <h2>Option 3: Một Nét Liền · Hồn Việt Cách Tân (Vietnamese Monoline)</h2>
+              <div class="insp-meta-row">
+                <span class="insp-meta-label">Cảm hứng cốt lõi:</span>
+                <span class="insp-meta-text">Airbnb Bélo × Xoáy Má Dân Gian & Búp Sen Việt</span>
+              </div>
+            </div>
+            <span class="option-badge">Ultra Minimal</span>
           </div>
+
+          <!-- KHU VỰC LOGO CẢM HỨNG (THEO YÊU CẦU CLIENT) -->
+          <div class="insp-section-container">
+            <span style="font-size:11px; font-weight:800; color:#64748B; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:8px;">
+              🔍 Logo & Thương Hiệu Truyền Cảm Hứng Trực Tiếp:
+            </span>
+            <div class="inspiration-cards-row">
+              <div class="insp-card">
+                <div class="insp-card-logo">
+                  <img src="brand_reference_logos/airbnb.svg" alt="Airbnb (Biểu Tượng Bélo)">
+                </div>
+                <div class="insp-card-text">
+                  <div class="insp-brand-name">
+                    <span>Airbnb (Biểu Tượng Bélo)</span>
+                    <span class="insp-badge-mini">Kết Nối Vạn Dặm</span>
+                  </div>
+                  <div class="insp-brand-desc">Học hỏi: Nghệ thuật đường nét liên tục (Continuous Monoline) — vẽ được bằng 1 nét bút, truyền tải triết lý 'Belong Anywhere' (Thuộc về bất cứ nơi đâu).</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CÂU CHUYỆN THƯƠNG HIỆU GỢI Ý (BRAND STORY) -->
+          <div class="option-brand-story">
+            <div class="story-header">
+              <span class="story-badge">📖 Gợi Ý Câu Chuyện Thương Hiệu</span>
+              <h4 class="story-headline">“Sợi Dây Gắn Kết & Đóa Sen Dẫn Lối”</h4>
+            </div>
+            <p class="story-p">Lấy cảm hứng từ triết lý kết nối vạn dặm của Airbnb giao hòa cùng khí chất thanh cao của Đóa Sen và văn hóa ngàn năm Trống Đồng Đông Sơn. Chú mèo Ali Option 3 vươn mình như một búp sen hé nở, được phác họa chỉ bằng một nét liền mềm mại vĩnh cửu. Đó là biểu tượng của lòng hiếu khách thuần khiết và sự trân quý văn hóa bản địa — mỗi hành trình cùng Ali là một bước chạm vào chiều sâu di sản phương Đông.</p>
+            <div class="story-tagline-wrap">
+              <span class="tagline-prefix">Thông điệp cốt lõi:</span>
+              <span class="tagline-text">“Một nét duyên Việt, vạn dặm an nhiên.”</span>
+            </div>
+          </div>
+        </div>
+
         <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
         <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
           <div class="block-head" style="margin-bottom: 16px;">
@@ -1111,8 +1393,6 @@
           </div>
         </div>
 
-          <span class="option-badge">Ultra Minimal</span>
-        </div>
 
         <!-- Mục 1: Brand Lockup -->
         <div class="section-block">
@@ -1184,10 +1464,52 @@
     <div class="option-panel" id="panel-opt4">
       <div class="option-card-main">
         <div class="option-banner">
-          <div class="option-title-group">
-            <h2>Option 4: Mặt Mèo + La Bàn Ẩn (Forehead Compass Star)</h2>
-            <span>Cảm hứng: 16px Pure App Icon Geometry</span>
+          <div class="option-header-top">
+            <div class="option-title-group">
+              <h2>Option 4: Mặt Mèo + La Bàn Ẩn (Forehead Compass Star)</h2>
+              <div class="insp-meta-row">
+                <span class="insp-meta-label">Cảm hứng cốt lõi:</span>
+                <span class="insp-meta-text">Apple Squircle × Tinh Thần Tối Giản Silicon Valley</span>
+              </div>
+            </div>
+            <span class="option-badge">Iconic Focus</span>
           </div>
+
+          <!-- KHU VỰC LOGO CẢM HỨNG (THEO YÊU CẦU CLIENT) -->
+          <div class="insp-section-container">
+            <span style="font-size:11px; font-weight:800; color:#64748B; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:8px;">
+              🔍 Logo & Thương Hiệu Truyền Cảm Hứng Trực Tiếp:
+            </span>
+            <div class="inspiration-cards-row">
+              <div class="insp-card">
+                <div class="insp-card-logo">
+                  <img src="brand_reference_logos/apple.svg" alt="Apple (iOS Squircle Grid)">
+                </div>
+                <div class="insp-card-text">
+                  <div class="insp-brand-name">
+                    <span>Apple (iOS Squircle Grid)</span>
+                    <span class="insp-badge-mini">Tỉ Lệ Vàng App Icon</span>
+                  </div>
+                  <div class="insp-brand-desc">Học hỏi: Tỉ lệ vàng đường cong siêu elip (Squircle) chuẩn mực của hệ sinh thái Apple, tối ưu độ mượt mà và tập trung thị giác.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CÂU CHUYỆN THƯƠNG HIỆU GỢI Ý (BRAND STORY) -->
+          <div class="option-brand-story">
+            <div class="story-header">
+              <span class="story-badge">📖 Gợi Ý Câu Chuyện Thương Hiệu</span>
+              <h4 class="story-headline">“Vị Thần Bản Địa Trên Màn Hình Điện Thoại”</h4>
+            </div>
+            <p class="story-p">Trong kỷ nguyên số, chiếc điện thoại thông minh chính là tấm bản đồ vạn năng của người lữ khách. Ali Option 4 xuất hiện tựa một vị Thần Thổ Địa bảo hộ quyền năng thu gọn trong lòng bàn tay. Ngôi sao 4 cánh định vị trên trán lấp lánh như ánh mắt tinh anh của thần linh, soi tỏ từng ngóc ngách bản địa và mở ra những trải nghiệm số mượt mà, đẳng cấp từ phòng khách sạn đến đỉnh non cao.</p>
+            <div class="story-tagline-wrap">
+              <span class="tagline-prefix">Thông điệp cốt lõi:</span>
+              <span class="tagline-text">“Thổ địa trong tay, an tâm khám phá.”</span>
+            </div>
+          </div>
+        </div>
+
         <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
         <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
           <div class="block-head" style="margin-bottom: 16px;">
@@ -1244,8 +1566,6 @@
           </div>
         </div>
 
-          <span class="option-badge">Iconic Focus</span>
-        </div>
 
         <!-- Mục 1: Brand Lockup -->
         <div class="section-block">
@@ -1316,10 +1636,52 @@
     <div class="option-panel" id="panel-opt5">
       <div class="option-card-main">
         <div class="option-banner">
-          <div class="option-title-group">
-            <h2>Option 5: Mèo + Địa Cầu (World Explorer)</h2>
-            <span>Cảm hứng: Firefox Dynamic Energy</span>
+          <div class="option-header-top">
+            <div class="option-title-group">
+              <h2>Option 5: Mèo + Địa Cầu (World Explorer)</h2>
+              <div class="insp-meta-row">
+                <span class="insp-meta-label">Cảm hứng cốt lõi:</span>
+                <span class="insp-meta-text">Mozilla Firefox Dynamic Energy × Thủy Văn Biển Đông</span>
+              </div>
+            </div>
+            <span class="option-badge">Global Journey</span>
           </div>
+
+          <!-- KHU VỰC LOGO CẢM HỨNG (THEO YÊU CẦU CLIENT) -->
+          <div class="insp-section-container">
+            <span style="font-size:11px; font-weight:800; color:#64748B; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:8px;">
+              🔍 Logo & Thương Hiệu Truyền Cảm Hứng Trực Tiếp:
+            </span>
+            <div class="inspiration-cards-row">
+              <div class="insp-card">
+                <div class="insp-card-logo">
+                  <img src="brand_reference_logos/firefox.svg" alt="Mozilla Firefox">
+                </div>
+                <div class="insp-card-text">
+                  <div class="insp-brand-name">
+                    <span>Mozilla Firefox</span>
+                    <span class="insp-badge-mini">Năng Lượng Toàn Cầu</span>
+                  </div>
+                  <div class="insp-brand-desc">Học hỏi: Động thái uốn mình ôm trọn địa cầu kinh điển của linh vật Firefox, truyền tải nguồn năng lượng cuộn trào và tính toàn cầu hóa.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CÂU CHUYỆN THƯƠNG HIỆU GỢI Ý (BRAND STORY) -->
+          <div class="option-brand-story">
+            <div class="story-header">
+              <span class="story-badge">📖 Gợi Ý Câu Chuyện Thương Hiệu</span>
+              <h4 class="story-headline">“Cưỡi Sóng Biển Đông, Đón Gió Năm Châu”</h4>
+            </div>
+            <p class="story-p">Đất nước Việt Nam được bao bọc bởi hàng ngàn dặm bờ biển và dòng chảy phù sa trù phú. Chú mèo Ali Option 5 uốn mình ôm trọn địa cầu bằng đường cong sóng lượn uyển chuyển của Biển Đông, tượng trưng cho tinh thần phóng khoáng, tự do và khát vọng vươn mình ra thế giới. Ali là người bạn đồng hành can trường, trao cho lữ khách niềm tin vững chãi trên mọi hải trình và cung đường phiêu lưu.</p>
+            <div class="story-tagline-wrap">
+              <span class="tagline-prefix">Thông điệp cốt lõi:</span>
+              <span class="tagline-text">“Ra khơi cùng sóng, vững tâm hải trình.”</span>
+            </div>
+          </div>
+        </div>
+
         <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
         <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
           <div class="block-head" style="margin-bottom: 16px;">
@@ -1376,8 +1738,6 @@
           </div>
         </div>
 
-          <span class="option-badge">Global Journey</span>
-        </div>
 
         <!-- Mục 1: Brand Lockup -->
         <div class="section-block">
@@ -1449,10 +1809,52 @@
     <div class="option-panel" id="panel-opt6">
       <div class="option-card-main">
         <div class="option-banner">
-          <div class="option-title-group">
-            <h2>Option 6: Mèo Khoảng Âm (WWF Negative Space)</h2>
-            <span>Cảm hứng: Gestalt Negative Space Technique</span>
+          <div class="option-header-top">
+            <div class="option-title-group">
+              <h2>Option 6: Mèo Khoảng Âm (WWF Negative Space)</h2>
+              <div class="insp-meta-row">
+                <span class="insp-meta-label">Cảm hứng cốt lõi:</span>
+                <span class="insp-meta-text">Booking.com Reliability × Triết Lý Âm Dương Thái Cực</span>
+              </div>
+            </div>
+            <span class="option-badge">Clever Emblem</span>
           </div>
+
+          <!-- KHU VỰC LOGO CẢM HỨNG (THEO YÊU CẦU CLIENT) -->
+          <div class="insp-section-container">
+            <span style="font-size:11px; font-weight:800; color:#64748B; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:8px;">
+              🔍 Logo & Thương Hiệu Truyền Cảm Hứng Trực Tiếp:
+            </span>
+            <div class="inspiration-cards-row">
+              <div class="insp-card">
+                <div class="insp-card-logo">
+                  <img src="brand_reference_logos/booking.svg" alt="Booking.com">
+                </div>
+                <div class="insp-card-text">
+                  <div class="insp-brand-name">
+                    <span>Booking.com</span>
+                    <span class="insp-badge-mini">Bảo Chứng Số 1</span>
+                  </div>
+                  <div class="insp-brand-desc">Học hỏi: Tính chuẩn xác, độ tin cậy và sự bảo chứng tuyệt đối của nền tảng đặt phòng du lịch hàng đầu hành tinh.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CÂU CHUYỆN THƯƠNG HIỆU GỢI Ý (BRAND STORY) -->
+          <div class="option-brand-story">
+            <div class="story-header">
+              <span class="story-badge">📖 Gợi Ý Câu Chuyện Thương Hiệu</span>
+              <h4 class="story-headline">“Vẻ Đẹp Trong Tĩnh Lặng & Sự Cân Bằng Hoàn Hảo”</h4>
+            </div>
+            <p class="story-p">Du lịch đích thực không chỉ là dịch chuyển thân xác, mà còn là hành trình tìm kiếm sự cân bằng và chữa lành trong tâm hồn. Bằng nghệ thuật không gian âm Gestalt bậc thầy, Ali ẩn hiện tự nhiên trong vòng thái cực viên mãn. Không một chi tiết thừa, biểu tượng toát lên vẻ an yên, sự tĩnh tại và lời hứa bảo chứng chuyên nghiệp — nơi mọi nhu cầu của du khách đều được thấu hiểu trọn vẹn.</p>
+            <div class="story-tagline-wrap">
+              <span class="tagline-prefix">Thông điệp cốt lõi:</span>
+              <span class="tagline-text">“Khoảng lặng diệu kỳ, trọn vẹn chuyến đi.”</span>
+            </div>
+          </div>
+        </div>
+
         <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
         <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
           <div class="block-head" style="margin-bottom: 16px;">
@@ -1509,8 +1911,6 @@
           </div>
         </div>
 
-          <span class="option-badge">Clever Emblem</span>
-        </div>
 
         <!-- Mục 1: Brand Lockup -->
         <div class="section-block">
@@ -1581,10 +1981,64 @@
     <div class="option-panel" id="panel-opt7">
       <div class="option-card-main">
         <div class="option-banner">
-          <div class="option-title-group">
-            <h2>Option 7: Mascot Ali (Duolingo-Style Companion)</h2>
-            <span>Cảm hứng: Interactive App Companion &amp; Video Mascot</span>
+          <div class="option-header-top">
+            <div class="option-title-group">
+              <h2>Option 7: Mascot Ali (Duolingo-Style Companion)</h2>
+              <div class="insp-meta-row">
+                <span class="insp-meta-label">Cảm hứng cốt lõi:</span>
+                <span class="insp-meta-text">Duolingo × Hopper Travel Bunny × Mèo Thần Tài Maneki Neko</span>
+              </div>
+            </div>
+            <span class="option-badge">Brand Character</span>
           </div>
+
+          <!-- KHU VỰC LOGO CẢM HỨNG (THEO YÊU CẦU CLIENT) -->
+          <div class="insp-section-container">
+            <span style="font-size:11px; font-weight:800; color:#64748B; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:8px;">
+              🔍 Logo & Thương Hiệu Truyền Cảm Hứng Trực Tiếp:
+            </span>
+            <div class="inspiration-cards-row">
+              <div class="insp-card">
+                <div class="insp-card-logo">
+                  <img src="brand_reference_logos/duolingo.svg" alt="Duolingo">
+                </div>
+                <div class="insp-card-text">
+                  <div class="insp-brand-name">
+                    <span>Duolingo</span>
+                    <span class="insp-badge-mini">Mascot Tương Tác</span>
+                  </div>
+                  <div class="insp-brand-desc">Học hỏi: Khả năng biến thương hiệu thành một nhân vật hoạt hình sống động có cảm xúc, vui vẻ và đồng hành hàng ngày.</div>
+                </div>
+              </div>
+              <div class="insp-card">
+                <div class="insp-card-logo">
+                  <img src="brand_reference_logos/hopper.svg" alt="Hopper">
+                </div>
+                <div class="insp-card-text">
+                  <div class="insp-brand-name">
+                    <span>Hopper</span>
+                    <span class="insp-badge-mini">Travel App Mascot</span>
+                  </div>
+                  <div class="insp-brand-desc">Học hỏi: Chú thỏ du lịch Hopper — linh vật công nghệ du lịch thông minh, thân thiện tối đa với thế hệ Gen Z.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CÂU CHUYỆN THƯƠNG HIỆU GỢI Ý (BRAND STORY) -->
+          <div class="option-brand-story">
+            <div class="story-header">
+              <span class="story-badge">📖 Gợi Ý Câu Chuyện Thương Hiệu</span>
+              <h4 class="story-headline">“Chiêu Tài Đón Lộc, Vẫy Chào Bốn Phương”</h4>
+            </div>
+            <p class="story-p">Từ bao đời nay, hình ảnh chú mèo vẫy tay Maneki Neko đã là biểu tượng của may mắn, thịnh vượng và lòng mến khách. Ali Option 7 đưa nét văn hóa thân thuộc ấy vào không gian du lịch số với nụ cười rạng rỡ và bàn tay Lucky Paw vẫy chào đầy nhiệt huyết. Mỗi bước chân cùng Ali là một bước chạm tới niềm vui, thu hút vận may và những mối lương duyên ấm áp trên khắp dặm dài khám phá.</p>
+            <div class="story-tagline-wrap">
+              <span class="tagline-prefix">Thông điệp cốt lõi:</span>
+              <span class="tagline-text">“Vẫy tay chào đón, vạn sự hanh thông.”</span>
+            </div>
+          </div>
+        </div>
+
         <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
         <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
           <div class="block-head" style="margin-bottom: 16px;">
@@ -1641,8 +2095,6 @@
           </div>
         </div>
 
-          <span class="option-badge">Brand Character</span>
-        </div>
 
         <!-- Mục 1: Brand Lockup -->
         <div class="section-block">
