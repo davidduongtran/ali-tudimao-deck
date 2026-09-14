@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali Tudimao 土地貓 — Bảng Trình Bày 7 Phương Án Thương Hiệu (Client Deck)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Noto+Sans+TC:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --indigo: #234E8C;
+      --coral: #F5623D;
+      --cream: #FBF4E9;
+      --teal: #2FB6C3;
+      --ink: #1A1F2B;
+      --bg: #F4F6FB;
+      --card: #FFFFFF;
+      --border: rgba(35, 78, 140, 0.09);
+      --shadow-sm: 0 4px 16px rgba(26, 31, 43, 0.04);
+      --shadow-md: 0 12px 36px rgba(26, 31, 43, 0.08);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      padding-bottom: 140px;
+    }
+
+    /* Presentation Header */
+    .deck-header {
+      background: linear-gradient(135deg, #15325B 0%, #234E8C 100%);
+      color: #FFFFFF;
+      padding: 64px 24px 80px;
+      text-align: center;
+      position: relative;
+    }
+    .deck-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: rgba(245, 98, 61, 0.2);
+      border: 1px solid rgba(245, 98, 61, 0.35);
+      color: #FF9E85;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .deck-header h1 {
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 8px;
+    }
+    .deck-header .deck-sub {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 22px;
+      color: var(--coral);
+      letter-spacing: 6px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .deck-header p {
+      font-size: 16px;
+      max-width: 720px;
+      margin: 0 auto 24px;
+      opacity: 0.88;
+      line-height: 1.6;
+    }
+    .deck-motto {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 8px 26px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #7BED9F;
+      letter-spacing: 0.5px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: -36px auto 0;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Client Navigation Bar */
+    .nav-bar {
+      background: #FFFFFF;
+      border-radius: 18px;
+      padding: 12px 16px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 36px;
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+    }
+    .tab-list {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      background: #F1F5F9;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      background: rgba(35, 78, 140, 0.08);
+      color: var(--indigo);
+    }
+    .tab-btn.active {
+      background: var(--indigo);
+      color: #FFFFFF;
+    }
+    .nav-hint {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--coral);
+      padding-right: 8px;
+    }
+
+    /* Option Presentation Panel */
+    .option-panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .option-panel.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .option-card-main {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .option-banner {
+      padding: 24px 32px;
+      background: #FAFCFF;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .option-title-group h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--indigo);
+      letter-spacing: -0.5px;
+    }
+    .option-title-group span {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 600;
+    }
+    .option-badge {
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(245, 98, 61, 0.12);
+      color: var(--coral);
+    }
+
+    /* 3 Standard Mandatory Sections */
+    .section-block {
+      padding: 36px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-block:last-child {
+      border-bottom: none;
+    }
+    .block-head {
+      margin-bottom: 24px;
+    }
+    .block-tag {
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--coral);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .block-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--indigo);
+      letter-spacing: -0.3px;
+    }
+    .block-desc {
+      font-size: 14px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* Section 1: Lockup Grid */
+    .lockup-duo {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 24px;
+    }
+    @media (max-width: 860px) {
+      .lockup-duo { grid-template-columns: 1fr; }
+    }
+    .lockup-frame {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+      border: 1px solid rgba(35, 78, 140, 0.08);
+    }
+    .lockup-frame img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .lockup-caption {
+      margin-top: 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--indigo);
+      text-align: center;
+    }
+
+    /* Section 2: Visual Concept Analysis */
+    .concept-detail-box {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 32px;
+      align-items: center;
+      background: #FAFCFF;
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+    @media (max-width: 768px) {
+      .concept-detail-box { grid-template-columns: 1fr; }
+    }
+    .concept-main-img {
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(35, 78, 140, 0.08);
+      background: #FFFFFF;
+      padding: 12px;
+    }
+    .concept-text h4 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--indigo);
+      margin-bottom: 8px;
+    }
+    .concept-text p {
+      font-size: 14.5px;
+      color: #334155;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .concept-points {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pt-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: #475569;
+    }
+    .pt-bullet {
+      color: var(--coral);
+      font-weight: 900;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    /* Section 3: Scale Matrix */
+    .scale-strip {
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+    }
+    .scale-row-client {
+      display: flex;
+      align-items: flex-end;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding-top: 12px;
+    }
+    .scale-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .scale-tile img {
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .scale-tile span {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748B;
+      white-space: nowrap;
+    }
+
+  
+    /* Vietnamese Cultural Section */
+    .vietnam-section {
+      background: linear-gradient(135deg, #FAF7F2 0%, #F5EFE6 100%);
+      border: 1px solid rgba(194, 91, 60, 0.2);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      margin-bottom: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .vn-head {
+      margin-bottom: 24px;
+    }
+    .vn-badge {
+      display: inline-block;
+      padding: 5px 14px;
+      background: rgba(245, 98, 61, 0.15);
+      border: 1px solid rgba(245, 98, 61, 0.35);
+      color: var(--coral);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .vietnam-section h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--indigo);
+      letter-spacing: -0.5px;
+    }
+    .vietnam-section p {
+      font-size: 14.5px;
+      color: #576F8E;
+      max-width: 780px;
+      margin-top: 4px;
+    }
+    .vn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .vn-card {
+      background: #FFFFFF;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid rgba(35, 78, 140, 0.08);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .vn-icon-box {
+      font-size: 28px;
+      line-height: 1;
+      padding-top: 2px;
+    }
+    .vn-content h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--indigo);
+      margin-bottom: 4px;
+    }
+    .vn-content p {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.5;
+      margin-top: 0;
+    }
+
+    /* Executive Strategic Benchmark Table */
+    .benchmark-executive {
+      background: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 32px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 36px;
+    }
+    .bench-header {
+      margin-bottom: 24px;
+    }
+    .bench-tag {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--coral);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .bench-header h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--indigo);
+      letter-spacing: -0.5px;
+    }
+    .bench-header p {
+      font-size: 14.5px;
+      color: #64748B;
+      margin-top: 4px;
+    }
+    .bench-table-wrap {
+      overflow-x: auto;
+    }
+    .bench-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+    .bench-table th {
+      background: #F8FAFD;
+      color: var(--indigo);
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 2px solid rgba(35, 78, 140, 0.1);
+    }
+    .bench-table td {
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(35, 78, 140, 0.06);
+      vertical-align: middle;
+    }
+    .bench-table tr:hover td {
+      background: #FAFCFF;
+    }
+    .brand-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo-frame {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 6px;
+    }
+    .brand-logo-frame img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .badge-pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .pill-pink { background: #FFE4E6; color: #E11D48; }
+    .pill-green { background: #DCFCE7; color: #16A34A; }
+    .pill-blue { background: #E0F2FE; color: #0284C7; }
+    .pill-navy { background: #DBEAFE; color: #1E40AF; }
+    .pill-orange { background: #FFEDD5; color: #EA580C; }
+
+    /* ==================================================================== */
+    /* HỆ 3 DẤU TRIO GRID (MASTER · MASCOT · SHIELD)                        */
+    /* ==================================================================== */
+    .trio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 16px;
+    }
+    @media (max-width: 900px) {
+      .trio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .trio-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid rgba(35, 78, 140, 0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 16px rgba(35, 78, 140, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .trio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(35, 78, 140, 0.08);
+    }
+    .trio-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(35, 78, 140, 0.06);
+    }
+    .trio-badge {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .tb-master { background: rgba(35, 78, 140, 0.1); color: var(--indigo); }
+    .tb-mascot { background: rgba(2, 132, 199, 0.1); color: #0284C7; }
+    .tb-shield { background: rgba(245, 98, 61, 0.1); color: var(--coral); }
+    .trio-visual {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      margin-bottom: 16px;
+      border: 1px solid rgba(35, 78, 140, 0.06);
+      overflow: hidden;
+    }
+    .trio-visual img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .trio-body {
+      margin-top: auto;
+    }
+    .trio-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--indigo);
+      margin-bottom: 6px;
+    }
+    .trio-desc {
+      font-size: 13px;
+      color: #64748B;
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Presentation Header -->
+  <div class="deck-header">
+    <div class="deck-badge">Brand Identity Presentation · Phase 3</div>
+    <h1>Ali Tudimao — Bảng 7 Phương Án Thương Hiệu</h1>
+    <span class="deck-sub">土地貓 · TOÀN BỘ CÁC OPTION ĐỂ KHÁCH HÀNG LỰA CHỌN</span>
+    <p>
+      Tất cả 7 hướng tiếp cận đều được phát triển dựa trên triết lý cốt lõi: <strong>Mèo Ali + La bàn True North + Thổ địa dẫn đường</strong>, nhưng được khoác lên những "lớp da" hình học hiện đại, tươi mới, phẳng và co giãn xuất sắc theo tiêu chuẩn app-first.
+    </p>
+    <div class="deck-motto">跟著貓走就對了! 🐾 · Follow the cat, you can't go wrong!</div>
+  </div>
+
+  <div class="container">
+
+    
+    <!-- ==================================================================== -->
+    <!-- STRATEGIC BENCHMARK: HỌC HỎI TỪ CÁC THƯƠNG HIỆU HÀNG ĐẦU THẾ GIỚI -->
+    <!-- ==================================================================== -->
+    <div class="benchmark-executive">
+      <div class="bench-header">
+        <div class="bench-tag">STRATEGIC DESIGN BENCHMARK</div>
+        <h2>Học Hỏi Từ Các Biểu Tượng Du Lịch &amp; Công Nghệ Hàng Đầu Thế Giới</h2>
+        <p>Phân tích các nguyên lý tạo hình kinh điển và cách chuyển hóa chuẩn xác vào DNA của Ali Tudimao:</p>
+      </div>
+
+      <div class="bench-table-wrap">
+        <table class="bench-table">
+          <thead>
+            <tr>
+              <th style="width: 140px;">Thương Hiệu</th>
+              <th style="width: 220px;">Ngôn Ngữ Thị Giác</th>
+              <th>Giá Trị Cốt Lõi Kế Thừa</th>
+              <th style="width: 280px;">Ứng Dụng Cho Ali Tudimao</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="brand-cell">
+                  <div class="brand-logo-frame">
+                    <img src="brand_reference_logos/airbnb.svg" alt="Airbnb">
+                  </div>
+                  <strong>Airbnb</strong>
+                </div>
+              </td>
+              <td><span class="badge-pill pill-pink">Continuous Bélo Loop</span></td>
+              <td>Một nét liền mạch không đứt đoạn, gợi cảm giác thân thuộc, kết nối và chào đón.</td>
+              <td><strong>Ký hiệu Mèo + La bàn liền mạch</strong>, tối giản tuyệt đối, nhận diện ngay từ nét vẽ đầu tiên.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="brand-cell">
+                  <div class="brand-logo-frame">
+                    <img src="brand_reference_logos/duolingo.svg" alt="Duolingo">
+                  </div>
+                  <strong>Duolingo</strong>
+                </div>
+              </td>
+              <td><span class="badge-pill pill-green">Geometric Mascot</span></td>
+              <td>Linh vật hình học phẳng, mắt to biểu cảm, sống tự nhiên trên icon điện thoại và video.</td>
+              <td><strong>Mascot mèo Thổ Địa tròn đầy</strong>, thân thiện, dễ thương, không bị hoạt hình rườm rà.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="brand-cell">
+                  <div class="brand-logo-frame">
+                    <img src="brand_reference_logos/google_maps.svg" alt="Google Maps">
+                  </div>
+                  <strong>Google Maps</strong>
+                </div>
+              </td>
+              <td><span class="badge-pill pill-blue">Navigation Location Pin</span></td>
+              <td>Chiếc ghim định vị chuẩn app-first — liếc mắt 0.1s là hiểu ngay chức năng chỉ đường.</td>
+              <td><strong>Mèo biến thể Pin Bản Đồ</strong>, tích hợp định vị GPS làm marker điểm đến du lịch bản địa.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="brand-cell">
+                  <div class="brand-logo-frame">
+                    <img src="brand_reference_logos/grab.svg" alt="Grab">
+                  </div>
+                  <strong>Grab</strong>
+                </div>
+              </td>
+              <td><span class="badge-pill pill-green">Super-App Mobility</span></td>
+              <td>Đường nét giao thông dứt khoát, nhận diện thương hiệu cực mạnh trên đường phố Đông Nam Á.</td>
+              <td><strong>Tính ứng dụng thực địa cao</strong>, dễ nhận biết trên xe bus tour, thẻ hành lý, biển hiệu.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="brand-cell">
+                  <div class="brand-logo-frame">
+                    <img src="brand_reference_logos/booking.svg" alt="Booking.com">
+                  </div>
+                  <strong>Booking.com</strong>
+                </div>
+              </td>
+              <td><span class="badge-pill pill-navy">High-Trust Deep Navy</span></td>
+              <td>Chiều sâu của màu xanh Navy sâu kết hợp chữ Sans dứt khoát tạo sự an tâm và bảo chứng.</td>
+              <td><strong>Màu Chàm Ali Indigo (#234E8C)</strong> làm nền tảng uy tín, đối trọng với sắc Đất Nung nồng ấm.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="brand-cell">
+                  <div class="brand-logo-frame">
+                    <img src="brand_reference_logos/firefox.svg" alt="Firefox">
+                  </div>
+                  <strong>Firefox</strong>
+                </div>
+              </td>
+              <td><span class="badge-pill pill-orange">Animal Embracing Globe</span></td>
+              <td>Linh vật uốn lượn ôm trọn thế giới, tạo động lực phiêu lưu và dịch chuyển không ngừng.</td>
+              <td><strong>Dáng mèo cuộn tròn ôm địa cầu / sóng biển</strong>, tượng trưng cho những chuyến đi không biên giới.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+<!-- ==================================================================== -->
+    <!-- HỒN VIỆT HIỆN ĐẠI: YẾU TỐ VĂN HOÁ BẢN ĐỊA TRONG THIẾT KẾ -->
+    <!-- ==================================================================== -->
+    <div class="vietnam-section">
+      <div class="vn-head">
+        <span class="vn-badge">Hồn Việt Hiện Đại · Neo-Vietnamese Modernism</span>
+        <h2>4 Yếu Tố Văn Hoá Việt Nam Được Lồng Ghép Tinh Tế</h2>
+        <p>
+          Chúng tôi không phục dựng lối vẽ tranh dân gian rườm rà dễ gây cảm giác "cũ kỹ", mà <strong>chắt lọc tinh hoa biểu tượng Việt Nam</strong> vào các khối hình học đương đại chuẩn quốc tế:
+        </p>
+      </div>
+
+      <div class="vn-grid">
+        <div class="vn-card">
+          <div class="vn-icon-box">⛩️</div>
+          <div class="vn-content">
+            <h4>1. Thần Thái Thổ Địa Bản Xứ (Guardian Spirit)</h4>
+            <p>Ali không phải chú mèo cưng phương Tây vô tri, mà mang linh hồn của <strong>Thổ Địa Miêu (土地貓)</strong> — vị thần hộ mệnh đất đai hiền từ, thông tỏ mọi nẻo đường, che chở bình an và chúc phúc tài lộc cho du khách.</p>
+          </div>
+        </div>
+
+        <div class="vn-card">
+          <div class="vn-icon-box">🌀</div>
+          <div class="vn-content">
+            <h4>2. Xoáy Má Dân Gian Đông Hồ (Vietnamese Spirals)</h4>
+            <p>Hai bên má mèo mang họa tiết <strong>Xoáy Âm Dương / Xoáy Làng Tranh</strong> đặc trưng của mỹ thuật cổ truyền Việt (từ gốm thời Lý-Trần đến tranh khắc gỗ). Đây là nét nhận diện độc quyền bản địa, thay thế cho lông ria mèo phương Tây.</p>
+          </div>
+        </div>
+
+        <div class="vn-card">
+          <div class="vn-icon-box">🪷</div>
+          <div class="vn-content">
+            <h4>3. Ấn Ký Búp Sen Chỉ Hướng (Lotus Bud True North)</h4>
+            <p>Thay vì mũi tên la bàn kim loại phương Tây cứng nhắc, kim chỉ Bắc được cách điệu mềm mại theo hình dáng <strong>Búp Sen Ngậm Sương</strong> — quốc hoa Việt Nam, tượng trưng cho sự thuần khiết, định tâm và chỉ đường đúng đắn.</p>
+          </div>
+        </div>
+
+        <div class="vn-card">
+          <div class="vn-icon-box">🎨</div>
+          <div class="vn-content">
+            <h4>4. Bộ Màu Thổ Nhưỡng &amp; Di Sản Việt (Heritage Colors)</h4>
+            <p><strong>Chàm Biển Đông &amp; Lụa Hội An (#234E8C)</strong> đại diện cho chiều sâu đại dương; <strong>Đất Nung Gốm Bát Tràng (#F5623D)</strong> đại diện cho hơi ấm đất thiêng; trên nền <strong>Giấy Điệp Trắng Ngà (#FBF4E9)</strong> thanh thoát.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Nav Bar -->
+    <div class="nav-bar">
+      <div class="tab-list">
+        <button class="tab-btn active" onclick="showOption('opt1')">Option 1: La Bàn Tròn</button>
+        <button class="tab-btn" onclick="showOption('opt2')">Option 2: Pin Địa Điểm</button>
+        <button class="tab-btn" onclick="showOption('opt3')">Option 3: Một Nét Liền</button>
+        <button class="tab-btn" onclick="showOption('opt4')">Option 4: Sao Trán App-Icon</button>
+        <button class="tab-btn" onclick="showOption('opt5')">Option 5: Mèo Địa Cầu</button>
+        <button class="tab-btn" onclick="showOption('opt6')">Option 6: Mèo Khoảng Âm</button>
+        <button class="tab-btn" onclick="showOption('opt7')">Option 7: Mascot Ali</button>
+      </div>
+      <div class="nav-hint">Chọn từng Option để duyệt đầy đủ 3 mục ➔</div>
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- OPTION 1: LA BÀN TRÒN -->
+    <!-- ==================================================================== -->
+    <div class="option-panel active" id="panel-opt1">
+      <div class="option-card-main">
+        <div class="option-banner">
+          <div class="option-title-group">
+            <h2>Option 1: La Bàn Tròn (Compass Ring)</h2>
+            <span>Cảm hứng: Duolingo × Minimalist Compass Badge</span>
+          </div>
+        <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
+        <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
+          <div class="block-head" style="margin-bottom: 16px;">
+            <span class="block-tag" style="color: var(--indigo); background: rgba(35,78,140,0.08); padding: 4px 10px; border-radius: 6px; display: inline-block;">Hệ 3 Dấu Nhận Diện Hoàn Chỉnh</span>
+            <h3 class="block-title" style="margin-top: 8px;">Master Logo · Mascot Đồng Hành · Trust Shield Bảo Chứng</h3>
+            <p class="block-desc">"Ba dấu một gia đình: Master để nhận ra, Mascot để thương, Shield để tin." — Đồng bộ 100% hình học và màu sắc.</p>
+          </div>
+          
+          <div class="trio-grid">
+            <!-- 1. Master -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-master">1. Master Logo</span>
+                <span style="font-size:11px;font-weight:700;color:#64748B;">Danh Tính</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt1_scale_256.png" alt="Master">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Master: La Bàn Tròn</div>
+                <div class="trio-desc">Tối giản hình học, chuẩn app-icon. Đỉnh kim True North Coral chỉ hướng.</div>
+              </div>
+            </div>
+
+            <!-- 2. Mascot -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-mascot">2. Brand Mascot</span>
+                <span style="font-size:11px;font-weight:700;color:#0284C7;">Người Kể Chuyện</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt1_mascot.png" alt="Mascot">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Mascot: Ali Ôm La Bàn</div>
+                <div class="trio-desc">Chú mèo Duolingo-style toàn thân, mắt to tròn, hai tay nâng niu la bàn chỉ đường.</div>
+              </div>
+            </div>
+
+            <!-- 3. Trust Shield -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-shield">3. Trust Shield</span>
+                <span style="font-size:11px;font-weight:700;color:var(--coral);">Niềm Tin</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt1_shield.png" alt="Trust Shield">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Trust Shield: Huy Hiệu Tròn</div>
+                <div class="trio-desc">Con dấu tròn mạ viền sang trọng, khắc dòng chữ "ALI-PICKED · VERIFIED".</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <span class="option-badge">App-First Mascot</span>
+        </div>
+
+        <!-- Mục 1: Brand Lockup -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 1</span>
+            <h3 class="block-title">Hệ Thống Brand Lockup</h3>
+            <p class="block-desc">Ứng dụng biểu tượng cùng kiểu chữ hình học Latin "Ali" và chữ Hán "土地貓" (Tudimao).</p>
+          </div>
+          <div class="lockup-duo">
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt1_lockup_h.svg" alt="Lockup Ngang Option 1">
+              <span class="lockup-caption">Lockup Ngang (Horizontal) — Website Header, App Bar, Danh Thiếp</span>
+            </div>
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt1_lockup_v.svg" alt="Lockup Dọc Option 1" style="max-height: 260px;">
+              <span class="lockup-caption">Lockup Dọc (Vertical Badge) — Poster, Splash Screen, Tem Mộc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 2: So Sánh & Trình Bày Thiết Kế -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 2</span>
+            <h3 class="block-title">Trình Bày Thiết Kế &amp; Diễn Giải Thị Giác</h3>
+            <p class="block-desc">Chi tiết cấu trúc hình khối, ý nghĩa và cảm xúc thương hiệu mang lại.</p>
+          </div>
+          <div class="concept-detail-box">
+            <img class="concept-main-img" src="client_presentation_assets/opt1_scale_512.png" alt="Option 1 Master Render">
+            <div class="concept-text">
+              <h4>Khuôn Mặt Tròn Dẫn Đường Thân Thiện</h4>
+              <p>
+                Mặt mèo Ali được giản lược thành các đường cong tròn hoàn hảo lồng trong vành la bàn định vị. Đỉnh đầu là chiếc kim True North màu Coral sắc nét chỉ thẳng lên hướng Bắc.
+              </p>
+              <div class="concept-points">
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Cảm xúc:</strong> Gần gũi, ấm áp, tạo cảm giác an tâm tuyệt đối như một người bạn bản địa luôn đồng hành.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Ưu điểm hình học:</strong> Dáng tròn hoàn hảo giúp làm Avatar mạng xã hội (Facebook, Instagram, TikTok) không bao giờ bị lẹm góc.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Tương phản màu:</strong> Indigo #234E8C làm nền tin cậy, Coral #F5623D làm kim dẫn đường nổi bật.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 3: Kiểm Thử Co Giãn -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 3</span>
+            <h3 class="block-title">Kiểm Thử Khả Năng Co Giãn 16px → 256px</h3>
+            <p class="block-desc">Chứng minh biểu tượng đọc rõ ở mọi kích thước thực tế trên môi trường số.</p>
+          </div>
+          <div class="scale-strip">
+            <div class="scale-row-client">
+              <div class="scale-tile"><img src="client_presentation_assets/opt1_scale_16.png" width="16" height="16"><span>16px Favicon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt1_scale_32.png" width="32" height="32"><span>32px Tab Bar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt1_scale_64.png" width="64" height="64"><span>64px Menu Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt1_scale_128.png" width="96" height="96"><span>96px Avatar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt1_scale_256.png" width="128" height="128"><span>128px App Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt1_scale_512.png" width="160" height="160"><span>256px Badge</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- OPTION 2: PIN ĐỊA ĐIỂM -->
+    <!-- ==================================================================== -->
+    <div class="option-panel" id="panel-opt2">
+      <div class="option-card-main">
+        <div class="option-banner">
+          <div class="option-title-group">
+            <h2>Option 2: Mèo = Pin Địa Điểm (Map Pin Cat)</h2>
+            <span>Cảm hứng: Grab / Google Maps Navigation Pin</span>
+          </div>
+        <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
+        <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
+          <div class="block-head" style="margin-bottom: 16px;">
+            <span class="block-tag" style="color: var(--indigo); background: rgba(35,78,140,0.08); padding: 4px 10px; border-radius: 6px; display: inline-block;">Hệ 3 Dấu Nhận Diện Hoàn Chỉnh</span>
+            <h3 class="block-title" style="margin-top: 8px;">Master Logo · Mascot Đồng Hành · Trust Shield Bảo Chứng</h3>
+            <p class="block-desc">"Ba dấu một gia đình: Master để nhận ra, Mascot để thương, Shield để tin." — Đồng bộ 100% hình học và màu sắc.</p>
+          </div>
+          
+          <div class="trio-grid">
+            <!-- 1. Master -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-master">1. Master Logo</span>
+                <span style="font-size:11px;font-weight:700;color:#64748B;">Danh Tính</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt2_scale_256.png" alt="Master">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Master: Pin Địa Điểm</div>
+                <div class="trio-desc">Ghim bản đồ kết hợp tai mèo. Nhận diện 0.1s là ứng dụng du lịch định vị.</div>
+              </div>
+            </div>
+
+            <!-- 2. Mascot -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-mascot">2. Brand Mascot</span>
+                <span style="font-size:11px;font-weight:700;color:#0284C7;">Người Kể Chuyện</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt2_mascot.png" alt="Mascot">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Mascot: Ali Vẫy Chào Từ Pin</div>
+                <div class="trio-desc">Chú mèo nhô ra từ ghim định vị lớn, giơ bàn tay vẫy chào du khách (Grab/Maps energy).</div>
+              </div>
+            </div>
+
+            <!-- 3. Trust Shield -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-shield">3. Trust Shield</span>
+                <span style="font-size:11px;font-weight:700;color:var(--coral);">Niềm Tin</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt2_shield.png" alt="Trust Shield">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Trust Shield: Ghim Bản Đồ</div>
+                <div class="trio-desc">Dáng pin định vị độc quyền dập dải ruy băng "ALI-PICKED · VERIFIED DESTINATION".</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <span class="option-badge">Direct Navigation</span>
+        </div>
+
+        <!-- Mục 1: Brand Lockup -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 1</span>
+            <h3 class="block-title">Hệ Thống Brand Lockup</h3>
+            <p class="block-desc">Ứng dụng biểu tượng cùng kiểu chữ hình học Latin "Ali" và chữ Hán "土地貓" (Tudimao).</p>
+          </div>
+          <div class="lockup-duo">
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt2_lockup_h.svg" alt="Lockup Ngang Option 2">
+              <span class="lockup-caption">Lockup Ngang (Horizontal) — Website Header, App Bar, Danh Thiếp</span>
+            </div>
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt2_lockup_v.svg" alt="Lockup Dọc Option 2" style="max-height: 260px;">
+              <span class="lockup-caption">Lockup Dọc (Vertical Badge) — Poster, Splash Screen, Tem Mộc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 2: So Sánh & Trình Bày Thiết Kế -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 2</span>
+            <h3 class="block-title">Trình Bày Thiết Kế &amp; Diễn Giải Thị Giác</h3>
+            <p class="block-desc">Chi tiết cấu trúc hình khối, ý nghĩa và cảm xúc thương hiệu mang lại.</p>
+          </div>
+          <div class="concept-detail-box">
+            <img class="concept-main-img" src="client_presentation_assets/opt2_scale_512.png" alt="Option 2 Master Render">
+            <div class="concept-text">
+              <h4>Biểu Tượng Ghim Bản Đồ Thông Minh</h4>
+              <p>
+                Silhouette lấy cảm hứng từ chiếc ghim vị trí (GPS Pin) quen thuộc của công nghệ du lịch. Phần trên bo tròn tạo hình mặt mèo Ali, đỉnh chóp vươn lên thành kim chỉ hướng dứt khoát.
+              </p>
+              <div class="concept-points">
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Nhận diện 0.1s:</strong> Bất kỳ ai nhìn vào cũng lập tức hiểu ngay đây là ứng dụng bản đồ / địa điểm / dẫn đường.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Tính công năng:</strong> Cực kỳ thích hợp để dùng làm Custom Map Marker thả ghim các địa điểm Ali-Picked trên bản đồ tour.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Đẳng cấp công nghệ:</strong> Đồng điệu với ngôn ngữ thiết kế của Google Maps, Grab, Uber.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 3: Kiểm Thử Co Giãn -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 3</span>
+            <h3 class="block-title">Kiểm Thử Khả Năng Co Giãn 16px → 256px</h3>
+            <p class="block-desc">Chứng minh biểu tượng đọc rõ ở mọi kích thước thực tế trên môi trường số.</p>
+          </div>
+          <div class="scale-strip">
+            <div class="scale-row-client">
+              <div class="scale-tile"><img src="client_presentation_assets/opt2_scale_16.png" width="16" height="16"><span>16px Favicon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt2_scale_32.png" width="32" height="32"><span>32px Tab Bar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt2_scale_64.png" width="64" height="64"><span>64px Menu Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt2_scale_128.png" width="96" height="96"><span>96px Avatar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt2_scale_256.png" width="128" height="128"><span>128px App Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt2_scale_512.png" width="160" height="160"><span>256px Badge</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- OPTION 3: MỘT NÉT LIỀN -->
+    <!-- ==================================================================== -->
+    <div class="option-panel" id="panel-opt3">
+      <div class="option-card-main">
+        <div class="option-banner">
+          <div class="option-title-group">
+            <h2>Option 3: Một Nét Liền · Hồn Việt Cách Tân (Vietnamese Monoline)</h2>
+            <span>Cảm hứng: Airbnb Bélo × Xoáy Má Dân Gian & Búp Sen Việt</span>
+          </div>
+        <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
+        <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
+          <div class="block-head" style="margin-bottom: 16px;">
+            <span class="block-tag" style="color: var(--indigo); background: rgba(35,78,140,0.08); padding: 4px 10px; border-radius: 6px; display: inline-block;">Hệ 3 Dấu Nhận Diện Hoàn Chỉnh</span>
+            <h3 class="block-title" style="margin-top: 8px;">Master Logo · Mascot Đồng Hành · Trust Shield Bảo Chứng</h3>
+            <p class="block-desc">"Ba dấu một gia đình: Master để nhận ra, Mascot để thương, Shield để tin." — Đồng bộ 100% hình học và màu sắc.</p>
+          </div>
+          
+          <div class="trio-grid">
+            <!-- 1. Master -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-master">1. Master Logo</span>
+                <span style="font-size:11px;font-weight:700;color:#64748B;">Danh Tính</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt3_scale_256.png" alt="Master">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Master: Một Nét Liền &amp; Búp Sen</div>
+                <div class="trio-desc">Nét đơn monoline đồng nhất (Airbnb Bélo style), xoáy má âm dương Đông Hồ, đuôi vươn cao nở thành búp sen Việt kiêm kim chỉ Bắc.</div>
+              </div>
+            </div>
+
+            <!-- 2. Mascot -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-mascot">2. Brand Mascot</span>
+                <span style="font-size:11px;font-weight:700;color:#0284C7;">Người Kể Chuyện</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt3_mascot.png" alt="Mascot">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Mascot: Ali Ngồi Monoline Thư Thái</div>
+                <div class="trio-desc">Linh vật mèo Thổ Địa ngồi dáng thanh lịch kiêu hãnh, đường nét monoline liền mạch mang lại cảm xúc cao cấp và thân thiện cho du khách.</div>
+              </div>
+            </div>
+
+            <!-- 3. Trust Shield -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-shield">3. Trust Shield</span>
+                <span style="font-size:11px;font-weight:700;color:var(--coral);">Niềm Tin</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt3_shield.png" alt="Trust Shield">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Trust Shield: Huy Hiệu Monoline Sen</div>
+                <div class="trio-desc">Con dấu bảo chứng tròn khắc nổi biểu tượng Mèo Búp Sen Monoline cùng dòng chữ chuẩn mực "ALI-PICKED · AUTHENTIC TRAVEL".</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <span class="option-badge">Ultra Minimal</span>
+        </div>
+
+        <!-- Mục 1: Brand Lockup -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 1</span>
+            <h3 class="block-title">Hệ Thống Brand Lockup</h3>
+            <p class="block-desc">Ứng dụng biểu tượng cùng kiểu chữ hình học Latin "Ali" và chữ Hán "土地貓" (Tudimao).</p>
+          </div>
+          <div class="lockup-duo">
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt3_lockup_h.svg" alt="Lockup Ngang Option 3">
+              <span class="lockup-caption">Lockup Ngang (Horizontal) — Website Header, App Bar, Danh Thiếp</span>
+            </div>
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt3_lockup_v.svg" alt="Lockup Dọc Option 3" style="max-height: 260px;">
+              <span class="lockup-caption">Lockup Dọc (Vertical Badge) — Poster, Splash Screen, Tem Mộc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 2: So Sánh & Trình Bày Thiết Kế -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 2</span>
+            <h3 class="block-title">Trình Bày Thiết Kế &amp; Diễn Giải Thị Giác</h3>
+            <p class="block-desc">Chi tiết cấu trúc hình khối, ý nghĩa và cảm xúc thương hiệu mang lại.</p>
+          </div>
+          <div class="concept-detail-box">
+            <img class="concept-main-img" src="client_presentation_assets/opt3_scale_512.png" alt="Option 3 Master Render">
+            <div class="concept-text">
+              <h4>Hồn Việt Cách Tân: Nét Liền Bélo, Xoáy Má Dân Gian &amp; Búp Sen Chỉ Hướng</h4>
+              <p>
+                Sự kết hợp đỉnh cao giữa ngôn ngữ nét liền tối giản (Airbnb Bélo) và mỹ thuật dân gian Việt Nam:
+                Hai bên má mèo mang họa tiết <strong>Xoáy Âm Dương / Xoáy Làng Tranh</strong> đặc trưng mang lại sinh khí và tài lộc; đỉnh đầu là chiếc kim la bàn cách điệu từ <strong>Búp Sen Ngậm Sương</strong> — quốc hoa Việt Nam chỉ về hướng Bắc. Nụ cười hiền từ của Thổ Địa dẫn lối trên nền giấy điệp trắng ngà.
+              </p>
+              <div class="concept-points">
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Đậm đà bản sắc Việt:</strong> Xoáy má dân gian và búp sen là dấu ấn độc quyền bản địa, loại bỏ hoàn toàn cảm giác mèo ngoại quốc generic.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Thanh lịch &amp; Chuẩn quốc tế:</strong> Nét đơn đồng nhất (monoline) theo chuẩn mực thiết kế cao cấp của Airbnb, Monocle, Wander.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Đa dạng chất liệu:</strong> Cực kỳ xuất sắc khi thêu nổi trên nón vải, áo polo du lịch, hoặc dập chìm mạ vàng trên thẻ thành viên cao cấp.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 3: Kiểm Thử Co Giãn -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 3</span>
+            <h3 class="block-title">Kiểm Thử Khả Năng Co Giãn 16px → 256px</h3>
+            <p class="block-desc">Chứng minh biểu tượng đọc rõ ở mọi kích thước thực tế trên môi trường số.</p>
+          </div>
+          <div class="scale-strip">
+            <div class="scale-row-client">
+              <div class="scale-tile"><img src="client_presentation_assets/opt3_scale_16.png" width="16" height="16"><span>16px Favicon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt3_scale_32.png" width="32" height="32"><span>32px Tab Bar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt3_scale_64.png" width="64" height="64"><span>64px Menu Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt3_scale_128.png" width="96" height="96"><span>96px Avatar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt3_scale_256.png" width="128" height="128"><span>128px App Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt3_scale_512.png" width="160" height="160"><span>256px Badge</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- OPTION 4: MẶT MÈO SAO TRÁN -->
+    <!-- ==================================================================== -->
+    <div class="option-panel" id="panel-opt4">
+      <div class="option-card-main">
+        <div class="option-banner">
+          <div class="option-title-group">
+            <h2>Option 4: Mặt Mèo + La Bàn Ẩn (Forehead Compass Star)</h2>
+            <span>Cảm hứng: 16px Pure App Icon Geometry</span>
+          </div>
+        <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
+        <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
+          <div class="block-head" style="margin-bottom: 16px;">
+            <span class="block-tag" style="color: var(--indigo); background: rgba(35,78,140,0.08); padding: 4px 10px; border-radius: 6px; display: inline-block;">Hệ 3 Dấu Nhận Diện Hoàn Chỉnh</span>
+            <h3 class="block-title" style="margin-top: 8px;">Master Logo · Mascot Đồng Hành · Trust Shield Bảo Chứng</h3>
+            <p class="block-desc">"Ba dấu một gia đình: Master để nhận ra, Mascot để thương, Shield để tin." — Đồng bộ 100% hình học và màu sắc.</p>
+          </div>
+          
+          <div class="trio-grid">
+            <!-- 1. Master -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-master">1. Master Logo</span>
+                <span style="font-size:11px;font-weight:700;color:#64748B;">Danh Tính</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt4_scale_256.png" alt="Master">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Master: Squircle App-Icon &amp; Hoa Sen</div>
+                <div class="trio-desc">Khung bo tròn Squircle thời thượng, ấn ký hoa sen 8 cánh Coral trên trán và xoáy má âm dương dân gian khắc chìm tinh tế.</div>
+              </div>
+            </div>
+
+            <!-- 2. Mascot -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-mascot">2. Brand Mascot</span>
+                <span style="font-size:11px;font-weight:700;color:#0284C7;">Người Kể Chuyện</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt4_mascot.png" alt="Mascot">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Mascot: Ali App-Icon Thổ Địa</div>
+                <div class="trio-desc">Linh vật đại sứ công nghệ với khuôn mặt tròn trĩnh đáng yêu, đôi mắt trăng khuyết tươi vui và ấn ký hoa sen dẫn lối.</div>
+              </div>
+            </div>
+
+            <!-- 3. Trust Shield -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-shield">3. Trust Shield</span>
+                <span style="font-size:11px;font-weight:700;color:var(--coral);">Niềm Tin</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt4_shield.png" alt="Trust Shield">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Trust Shield: Con Dấu Bảo Chứng Squircle</div>
+                <div class="trio-desc">Huy hiệu chứng nhận điểm đến cao cấp đính 2 ngôi sao vàng cùng chứng thực quốc tế "ALI-PICKED · PREMIUM VERIFIED".</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <span class="option-badge">Iconic Focus</span>
+        </div>
+
+        <!-- Mục 1: Brand Lockup -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 1</span>
+            <h3 class="block-title">Hệ Thống Brand Lockup</h3>
+            <p class="block-desc">Ứng dụng biểu tượng cùng kiểu chữ hình học Latin "Ali" và chữ Hán "土地貓" (Tudimao).</p>
+          </div>
+          <div class="lockup-duo">
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt4_lockup_h.svg" alt="Lockup Ngang Option 4">
+              <span class="lockup-caption">Lockup Ngang (Horizontal) — Website Header, App Bar, Danh Thiếp</span>
+            </div>
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt4_lockup_v.svg" alt="Lockup Dọc Option 4" style="max-height: 260px;">
+              <span class="lockup-caption">Lockup Dọc (Vertical Badge) — Poster, Splash Screen, Tem Mộc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 2: So Sánh & Trình Bày Thiết Kế -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 2</span>
+            <h3 class="block-title">Trình Bày Thiết Kế &amp; Diễn Giải Thị Giác</h3>
+            <p class="block-desc">Chi tiết cấu trúc hình khối, ý nghĩa và cảm xúc thương hiệu mang lại.</p>
+          </div>
+          <div class="concept-detail-box">
+            <img class="concept-main-img" src="client_presentation_assets/opt4_scale_512.png" alt="Option 4 Master Render">
+            <div class="concept-text">
+              <h4>Mặt Mèo Hình Học Với Ấn Ký Sao Sen &amp; Xoáy Âm Dương</h4>
+              <p>
+                Được AI render với độ tinh xảo tối thượng: khuôn mặt mèo hình học phẳng với đôi mắt hạnh nhân mỉm cười hiền từ của Thổ Địa. Điểm nhấn đắt giá là <strong>Ấn ký Hoa Sen 8 cánh Coral</strong> ngay giữa trán và <strong>hai gò má chạm khắc Xoáy Âm Dương Đông Hồ</strong> sắc sảo. Biểu tượng sinh ra để tỏa sáng rực rỡ ở kích thước 16px của thanh trình duyệt.
+              </p>
+              <div class="concept-points">
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Tối ưu hóa kích thước nhỏ:</strong> Thiết kế sinh ra để hiển thị hoàn hảo ở kích thước 16px của thanh địa chỉ trình duyệt.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Điểm nhấn tinh xảo:</strong> Ngôi sao la bàn trên trán tạo nét khác biệt duy nhất so với tất cả các logo mèo thông thường.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Hiện đại &amp; Sạch sẽ:</strong> Tuyệt đối không có đường nét thừa.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 3: Kiểm Thử Co Giãn -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 3</span>
+            <h3 class="block-title">Kiểm Thử Khả Năng Co Giãn 16px → 256px</h3>
+            <p class="block-desc">Chứng minh biểu tượng đọc rõ ở mọi kích thước thực tế trên môi trường số.</p>
+          </div>
+          <div class="scale-strip">
+            <div class="scale-row-client">
+              <div class="scale-tile"><img src="client_presentation_assets/opt4_scale_16.png" width="16" height="16"><span>16px Favicon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt4_scale_32.png" width="32" height="32"><span>32px Tab Bar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt4_scale_64.png" width="64" height="64"><span>64px Menu Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt4_scale_128.png" width="96" height="96"><span>96px Avatar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt4_scale_256.png" width="128" height="128"><span>128px App Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt4_scale_512.png" width="160" height="160"><span>256px Badge</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- OPTION 5: MÈO ĐỊA CẦU -->
+    <!-- ==================================================================== -->
+    <div class="option-panel" id="panel-opt5">
+      <div class="option-card-main">
+        <div class="option-banner">
+          <div class="option-title-group">
+            <h2>Option 5: Mèo + Địa Cầu (World Explorer)</h2>
+            <span>Cảm hứng: Firefox Dynamic Energy</span>
+          </div>
+        <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
+        <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
+          <div class="block-head" style="margin-bottom: 16px;">
+            <span class="block-tag" style="color: var(--indigo); background: rgba(35,78,140,0.08); padding: 4px 10px; border-radius: 6px; display: inline-block;">Hệ 3 Dấu Nhận Diện Hoàn Chỉnh</span>
+            <h3 class="block-title" style="margin-top: 8px;">Master Logo · Mascot Đồng Hành · Trust Shield Bảo Chứng</h3>
+            <p class="block-desc">"Ba dấu một gia đình: Master để nhận ra, Mascot để thương, Shield để tin." — Đồng bộ 100% hình học và màu sắc.</p>
+          </div>
+          
+          <div class="trio-grid">
+            <!-- 1. Master -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-master">1. Master Logo</span>
+                <span style="font-size:11px;font-weight:700;color:#64748B;">Danh Tính</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt5_scale_256.png" alt="Master">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Master: Sóng Biển Đông &amp; Địa Cầu</div>
+                <div class="trio-desc">Đường lượn sóng biển Đà Nẵng kết hợp thân mèo ôm trọn quả cầu định vị, tâm điểm là đóa sen la bàn chỉ hướng Bắc True North.</div>
+              </div>
+            </div>
+
+            <!-- 2. Mascot -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-mascot">2. Brand Mascot</span>
+                <span style="font-size:11px;font-weight:700;color:#0284C7;">Người Kể Chuyện</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt5_mascot.png" alt="Mascot">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Mascot: Ali Nhà Thám Hiểm Biển Đông</div>
+                <div class="trio-desc">Linh vật thám hiểm đại dương năng động, mang tinh thần khám phá khoáng đạt của biển trời Việt Nam đến bạn bè năm châu.</div>
+              </div>
+            </div>
+
+            <!-- 3. Trust Shield -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-shield">3. Trust Shield</span>
+                <span style="font-size:11px;font-weight:700;color:var(--coral);">Niềm Tin</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt5_shield.png" alt="Trust Shield">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Trust Shield: Con Dấu Thám Hiểm Hàng Hải</div>
+                <div class="trio-desc">Huy hiệu mạ viền 64 khía răng cưa sang trọng, bảo chứng dịch vụ tour biển đảo "ALI-PICKED · MARITIME EXPLORER".</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <span class="option-badge">Global Journey</span>
+        </div>
+
+        <!-- Mục 1: Brand Lockup -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 1</span>
+            <h3 class="block-title">Hệ Thống Brand Lockup</h3>
+            <p class="block-desc">Ứng dụng biểu tượng cùng kiểu chữ hình học Latin "Ali" và chữ Hán "土地貓" (Tudimao).</p>
+          </div>
+          <div class="lockup-duo">
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt5_lockup_h.svg" alt="Lockup Ngang Option 5">
+              <span class="lockup-caption">Lockup Ngang (Horizontal) — Website Header, App Bar, Danh Thiếp</span>
+            </div>
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt5_lockup_v.svg" alt="Lockup Dọc Option 5" style="max-height: 260px;">
+              <span class="lockup-caption">Lockup Dọc (Vertical Badge) — Poster, Splash Screen, Tem Mộc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 2: So Sánh & Trình Bày Thiết Kế -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 2</span>
+            <h3 class="block-title">Trình Bày Thiết Kế &amp; Diễn Giải Thị Giác</h3>
+            <p class="block-desc">Chi tiết cấu trúc hình khối, ý nghĩa và cảm xúc thương hiệu mang lại.</p>
+          </div>
+          <div class="concept-detail-box">
+            <img class="concept-main-img" src="client_presentation_assets/opt5_scale_512.png" alt="Option 5 Master Render">
+            <div class="concept-text">
+              <h4>Dáng Sóng Biển Đông Hải Cuộn Tròn Ôm Quả Cầu &amp; Búp Sen Bắc</h4>
+              <p>
+                Tác phẩm nghệ thuật đỉnh cao kết hợp tinh thần du lịch quốc tế và bản sắc duyên hải Việt Nam:
+                Thân mèo uốn lượn mạnh mẽ theo nhịp <strong>Sóng Biển Đà Nẵng / Biển Đông</strong> với dải màu Coastline Teal tươi mát. Trung tâm quả cầu là chiếc kim định hướng tạo hình từ <strong>Búp Sen hé nở</strong> chỉ thẳng lên hướng Bắc. Gương mặt mèo Thổ Địa với xoáy má Đông Hồ tạo vẻ đĩnh đạc, uy quyền và hiếu khách.
+              </p>
+              <div class="concept-points">
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Năng động &amp; Mở rộng:</strong> Phù hợp cho định vị thương hiệu du lịch có tour quốc tế hoặc mạng lưới toàn quốc.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Tính biểu tượng mạnh:</strong> Tạo ấn tượng sâu sắc trong các chiến dịch marketing mùa du lịch cao điểm.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Màu Teal bổ trợ:</strong> Điểm xuyết màu xanh biển Teal #2FB6C3 tạo cảm giác tươi mát của đại dương.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 3: Kiểm Thử Co Giãn -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 3</span>
+            <h3 class="block-title">Kiểm Thử Khả Năng Co Giãn 16px → 256px</h3>
+            <p class="block-desc">Chứng minh biểu tượng đọc rõ ở mọi kích thước thực tế trên môi trường số.</p>
+          </div>
+          <div class="scale-strip">
+            <div class="scale-row-client">
+              <div class="scale-tile"><img src="client_presentation_assets/opt5_scale_16.png" width="16" height="16"><span>16px Favicon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt5_scale_32.png" width="32" height="32"><span>32px Tab Bar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt5_scale_64.png" width="64" height="64"><span>64px Menu Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt5_scale_128.png" width="96" height="96"><span>96px Avatar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt5_scale_256.png" width="128" height="128"><span>128px App Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt5_scale_512.png" width="160" height="160"><span>256px Badge</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- OPTION 6: MÈO KHOẢNG ÂM -->
+    <!-- ==================================================================== -->
+    <div class="option-panel" id="panel-opt6">
+      <div class="option-card-main">
+        <div class="option-banner">
+          <div class="option-title-group">
+            <h2>Option 6: Mèo Khoảng Âm (WWF Negative Space)</h2>
+            <span>Cảm hứng: Gestalt Negative Space Technique</span>
+          </div>
+        <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
+        <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
+          <div class="block-head" style="margin-bottom: 16px;">
+            <span class="block-tag" style="color: var(--indigo); background: rgba(35,78,140,0.08); padding: 4px 10px; border-radius: 6px; display: inline-block;">Hệ 3 Dấu Nhận Diện Hoàn Chỉnh</span>
+            <h3 class="block-title" style="margin-top: 8px;">Master Logo · Mascot Đồng Hành · Trust Shield Bảo Chứng</h3>
+            <p class="block-desc">"Ba dấu một gia đình: Master để nhận ra, Mascot để thương, Shield để tin." — Đồng bộ 100% hình học và màu sắc.</p>
+          </div>
+          
+          <div class="trio-grid">
+            <!-- 1. Master -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-master">1. Master Logo</span>
+                <span style="font-size:11px;font-weight:700;color:#64748B;">Danh Tính</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt6_scale_256.png" alt="Master">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Master: Mèo Khoảng Âm</div>
+                <div class="trio-desc">Con mèo hiện hình thông minh trong khoảng trắng giữa hai nửa bán cầu Indigo & Coral.</div>
+              </div>
+            </div>
+
+            <!-- 2. Mascot -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-mascot">2. Brand Mascot</span>
+                <span style="font-size:11px;font-weight:700;color:#0284C7;">Người Kể Chuyện</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt6_mascot.png" alt="Mascot">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Mascot: Ali Đồng Hành</div>
+                <div class="trio-desc">Linh vật mèo thông minh, nhanh nhẹn, là hiện thân sống động của Thổ Địa dẫn đường.</div>
+              </div>
+            </div>
+
+            <!-- 3. Trust Shield -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-shield">3. Trust Shield</span>
+                <span style="font-size:11px;font-weight:700;color:var(--coral);">Niềm Tin</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt6_shield.png" alt="Trust Shield">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Trust Shield: Split-Color Seal</div>
+                <div class="trio-desc">Con dấu hai nửa bán cầu tương phản độc nhất vô nhị dập nổi "ALI-PICKED · VERIFIED SEAL".</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <span class="option-badge">Clever Emblem</span>
+        </div>
+
+        <!-- Mục 1: Brand Lockup -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 1</span>
+            <h3 class="block-title">Hệ Thống Brand Lockup</h3>
+            <p class="block-desc">Ứng dụng biểu tượng cùng kiểu chữ hình học Latin "Ali" và chữ Hán "土地貓" (Tudimao).</p>
+          </div>
+          <div class="lockup-duo">
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt6_lockup_h.svg" alt="Lockup Ngang Option 6">
+              <span class="lockup-caption">Lockup Ngang (Horizontal) — Website Header, App Bar, Danh Thiếp</span>
+            </div>
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt6_lockup_v.svg" alt="Lockup Dọc Option 6" style="max-height: 260px;">
+              <span class="lockup-caption">Lockup Dọc (Vertical Badge) — Poster, Splash Screen, Tem Mộc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 2: So Sánh & Trình Bày Thiết Kế -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 2</span>
+            <h3 class="block-title">Trình Bày Thiết Kế &amp; Diễn Giải Thị Giác</h3>
+            <p class="block-desc">Chi tiết cấu trúc hình khối, ý nghĩa và cảm xúc thương hiệu mang lại.</p>
+          </div>
+          <div class="concept-detail-box">
+            <img class="concept-main-img" src="client_presentation_assets/opt6_scale_512.png" alt="Option 6 Master Render">
+            <div class="concept-text">
+              <h4>Khoảng Âm Thông Minh Giữa Hai Nửa La Bàn</h4>
+              <p>
+                Hai nửa bán cầu tách biệt mang hai màu chủ đạo: Indigo (nửa trái) và Coral (nửa phải). Khoảng trống ở giữa hợp lại thành hình chú mèo Ali cùng kim la bàn chỉ hướng Bắc vươn lên.
+              </p>
+              <div class="concept-points">
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Đỉnh cao nghệ thuật đồ họa:</strong> Sử dụng định luật thị giác Gestalt, khiến người xem bất ngờ và nhớ mãi.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Con dấu mộc độc quyền:</strong> Cực kỳ thích hợp làm con dấu chứng nhận "Ali-Picked Verified" đóng dấu các điểm đến uy tín.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Cân bằng âm dương:</strong> Sự giao thoa giữa Indigo trầm ổn và Coral ấm áp tạo chiều sâu thị giác.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 3: Kiểm Thử Co Giãn -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 3</span>
+            <h3 class="block-title">Kiểm Thử Khả Năng Co Giãn 16px → 256px</h3>
+            <p class="block-desc">Chứng minh biểu tượng đọc rõ ở mọi kích thước thực tế trên môi trường số.</p>
+          </div>
+          <div class="scale-strip">
+            <div class="scale-row-client">
+              <div class="scale-tile"><img src="client_presentation_assets/opt6_scale_16.png" width="16" height="16"><span>16px Favicon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt6_scale_32.png" width="32" height="32"><span>32px Tab Bar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt6_scale_64.png" width="64" height="64"><span>64px Menu Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt6_scale_128.png" width="96" height="96"><span>96px Avatar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt6_scale_256.png" width="128" height="128"><span>128px App Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt6_scale_512.png" width="160" height="160"><span>256px Badge</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- OPTION 7: MASCOT ALI -->
+    <!-- ==================================================================== -->
+    <div class="option-panel" id="panel-opt7">
+      <div class="option-card-main">
+        <div class="option-banner">
+          <div class="option-title-group">
+            <h2>Option 7: Mascot Ali (Duolingo-Style Companion)</h2>
+            <span>Cảm hứng: Interactive App Companion &amp; Video Mascot</span>
+          </div>
+        <!-- HỆ 3 DẤU: MASTER · MASCOT · TRUST SHIELD -->
+        <div class="section-block" style="background: #FAFCFF; border-bottom: 2px solid rgba(35,78,140,0.12);">
+          <div class="block-head" style="margin-bottom: 16px;">
+            <span class="block-tag" style="color: var(--indigo); background: rgba(35,78,140,0.08); padding: 4px 10px; border-radius: 6px; display: inline-block;">Hệ 3 Dấu Nhận Diện Hoàn Chỉnh</span>
+            <h3 class="block-title" style="margin-top: 8px;">Master Logo · Mascot Đồng Hành · Trust Shield Bảo Chứng</h3>
+            <p class="block-desc">"Ba dấu một gia đình: Master để nhận ra, Mascot để thương, Shield để tin." — Đồng bộ 100% hình học và màu sắc.</p>
+          </div>
+          
+          <div class="trio-grid">
+            <!-- 1. Master -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-master">1. Master Logo</span>
+                <span style="font-size:11px;font-weight:700;color:#64748B;">Danh Tính</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt7_scale_256.png" alt="Master">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Master: Icon Mèo Mascot</div>
+                <div class="trio-desc">Biểu tượng tối giản rút gọn từ khuôn mặt tròn của linh vật mèo Ali.</div>
+              </div>
+            </div>
+
+            <!-- 2. Mascot -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-mascot">2. Brand Mascot</span>
+                <span style="font-size:11px;font-weight:700;color:#0284C7;">Người Kể Chuyện</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt7_mascot.png" alt="Mascot">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Mascot: Ali Duolingo Companion</div>
+                <div class="trio-desc">Linh vật mèo toàn thân mập mạp, hai tay ôm la bàn, biểu cảm cực kỳ đáng yêu cho video.</div>
+              </div>
+            </div>
+
+            <!-- 3. Trust Shield -->
+            <div class="trio-card">
+              <div class="trio-card-head">
+                <span class="trio-badge tb-shield">3. Trust Shield</span>
+                <span style="font-size:11px;font-weight:700;color:var(--coral);">Niềm Tin</span>
+              </div>
+              <div class="trio-visual">
+                <img src="client_presentation_assets/opt7_shield.png" alt="Trust Shield">
+              </div>
+              <div class="trio-body">
+                <div class="trio-title">Trust Shield: Trusted Guide</div>
+                <div class="trio-desc">Huy hiệu bảo chứng với dòng chữ "ALI-PICKED · TRUSTED GUIDE" bảo vệ quyền lợi du khách.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <span class="option-badge">Brand Character</span>
+        </div>
+
+        <!-- Mục 1: Brand Lockup -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 1</span>
+            <h3 class="block-title">Hệ Thống Brand Lockup</h3>
+            <p class="block-desc">Ứng dụng biểu tượng cùng kiểu chữ hình học Latin "Ali" và chữ Hán "土地貓" (Tudimao).</p>
+          </div>
+          <div class="lockup-duo">
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt7_lockup_h.svg" alt="Lockup Ngang Option 7">
+              <span class="lockup-caption">Lockup Ngang (Horizontal) — Website Header, App Bar, Danh Thiếp</span>
+            </div>
+            <div class="lockup-frame">
+              <img src="client_presentation_assets/opt7_lockup_v.svg" alt="Lockup Dọc Option 7" style="max-height: 260px;">
+              <span class="lockup-caption">Lockup Dọc (Vertical Badge) — Poster, Splash Screen, Tem Mộc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 2: So Sánh & Trình Bày Thiết Kế -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 2</span>
+            <h3 class="block-title">Trình Bày Thiết Kế &amp; Diễn Giải Thị Giác</h3>
+            <p class="block-desc">Chi tiết cấu trúc hình khối, ý nghĩa và cảm xúc thương hiệu mang lại.</p>
+          </div>
+          <div class="concept-detail-box">
+            <img class="concept-main-img" src="client_presentation_assets/opt7_scale_512.png" alt="Option 7 Master Render">
+            <div class="concept-text">
+              <h4>Linh Vật Sống Đồng Hành Với Du Khách</h4>
+              <p>
+                Chú mèo linh vật Ali với đôi mắt to tròn long lanh, thân hình mập mạp đáng yêu, hai tay ôm chiếc la bàn chỉ hướng trước bụng. Đuôi mèo uốn cong kết thúc bằng mũi tên True North.
+              </p>
+              <div class="concept-points">
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Nhân vật hóa thương hiệu:</strong> Giúp khách hàng cảm nhận Ali không chỉ là một ứng dụng vô tri mà là một người bạn dẫn đường chân thành.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Sức mạnh video &amp; mạng xã hội:</strong> Cực kỳ dễ biến hóa thành các biểu cảm animation vui nhộn cho video TikTok/Shorts và trợ lý ảo trong app.</span></div>
+                <div class="pt-row"><span class="pt-bullet">✦</span><span><strong>Tiềm năng Merchandise:</strong> Sẵn sàng để sản xuất gấu bông, móc chìa khóa, sticker hành lý cho khách du lịch.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục 3: Kiểm Thử Co Giãn -->
+        <div class="section-block">
+          <div class="block-head">
+            <span class="block-tag">Mục 3</span>
+            <h3 class="block-title">Kiểm Thử Khả Năng Co Giãn 16px → 256px</h3>
+            <p class="block-desc">Chứng minh biểu tượng đọc rõ ở mọi kích thước thực tế trên môi trường số.</p>
+          </div>
+          <div class="scale-strip">
+            <div class="scale-row-client">
+              <div class="scale-tile"><img src="client_presentation_assets/opt7_scale_16.png" width="16" height="16"><span>16px Favicon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt7_scale_32.png" width="32" height="32"><span>32px Tab Bar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt7_scale_64.png" width="64" height="64"><span>64px Menu Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt7_scale_128.png" width="96" height="96"><span>96px Avatar</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt7_scale_256.png" width="128" height="128"><span>128px App Icon</span></div>
+              <div class="scale-tile"><img src="client_presentation_assets/opt7_scale_512.png" width="160" height="160"><span>256px Badge</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+  <script>
+    function showOption(optId) {
+      // Deactivate all tabs
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(t => t.classList.remove('active'));
+
+      // Hide all panels
+      const panels = document.querySelectorAll('.option-panel');
+      panels.forEach(p => p.classList.remove('active'));
+
+      // Activate current
+      event.target.classList.add('active');
+      const activePanel = document.getElementById('panel-' + optId);
+      if (activePanel) {
+        activePanel.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

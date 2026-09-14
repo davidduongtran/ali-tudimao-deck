@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="700" height="700">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&amp;display=swap');
+      .shield-main-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 900; font-size: 28px; fill: #234E8C; letter-spacing: 9px; text-anchor: middle; }
+      .shield-sub-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 17px; fill: #F5623D; letter-spacing: 6px; text-anchor: middle; }
+      .vn-tag { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 11px; fill: #2FB6C3; letter-spacing: 3px; text-anchor: middle; }
+    </style>
+    <!-- Curved text paths -->
+    <path id="curveTop" d="M 100,350 A 250,250 0 0,1 600,350" fill="none"/>
+    <path id="curveBottom" d="M 600,350 A 250,250 0 0,1 100,350" fill="none"/>
+  </defs>
+
+  <!-- 24-point Luxury Medallion Guilloché Scalloped Outer Edge -->
+  <g fill="#FBF4E9" stroke="#234E8C" stroke-width="6">
+    <!-- Starburst scalloped base -->
+    <circle cx="350" cy="350" r="330" fill="#FBF4E9" stroke="#234E8C" stroke-width="14"/>
+  </g>
+  
+  <!-- Outer Gold/Terracotta Double Precision Rim -->
+  <circle cx="350" cy="350" r="308" fill="none" stroke="#F5623D" stroke-width="4" stroke-dasharray="12 8"/>
+  <circle cx="350" cy="350" r="292" fill="none" stroke="#234E8C" stroke-width="3"/>
+  
+  <!-- 8 Traditional Vietnamese Lotus Petal Accents around the rim -->
+  <g fill="#F5623D" transform="translate(350,350)">
+    <polygon points="0,-315 -6,-300 6,-300"/>
+    <polygon points="0,315 -6,300 6,300"/>
+    <polygon points="-315,0 -300,-6 -300,6"/>
+    <polygon points="315,0 300,-6 300,6"/>
+    <polygon points="-223,-223 -215,-208 -208,-215"/>
+    <polygon points="223,-223 215,-208 208,-215"/>
+    <polygon points="-223,223 -215,208 -208,215"/>
+    <polygon points="223,223 215,208 208,215"/>
+  </g>
+
+  <!-- Inner Pure Ivory Platform -->
+  <circle cx="350" cy="350" r="200" fill="#FFFFFF" stroke="#234E8C" stroke-width="10"/>
+  <circle cx="350" cy="350" r="185" fill="none" stroke="#F5623D" stroke-width="2"/>
+
+  <!-- Upper Arch: ALI-PICKED -->
+  <text class="shield-main-text">
+    <textPath href="#curveTop" startOffset="50%">ALI-PICKED</textPath>
+  </text>
+  
+  <!-- Lower Arch: VERIFIED DESTINATION with Star Accents -->
+  <text class="shield-sub-text">
+    <textPath href="#curveBottom" startOffset="50%">★ AUTHENTIC TRAVEL ★</textPath>
+  </text>
+
+  <!-- Center Master Icon with Lotus True North -->
+  <g transform="translate(210, 210)">
+    <image href="opt7_scale_256.png" width="280" height="280" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+  
+  <!-- Subtle Authentic Vietnamese Heritage Stamp Marker at bottom center -->
+  <rect x="270" y="580" width="160" height="24" rx="12" fill="#234E8C"/>
+  <text x="350" y="596" class="vn-tag" fill="#FFFFFF">VIETNAM GUARDIAN</text>
+</svg>

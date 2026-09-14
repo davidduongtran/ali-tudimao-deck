@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <rect width="800" height="800" fill="#FBF4E9"/>
+  <g transform="translate(400, 420)">
+    <!-- Big Location Pin in background -->
+    <path d="M 0,-100 
+             C 140,-100 240,0 240,140 
+             C 240,280 80,420 0,480 
+             C -80,420 -240,280 -240,140 
+             C -240,0 -140,-100 0,-100 Z" 
+          fill="#234E8C" opacity="0.15"/>
+    <path d="M 0,-80 
+             C 120,-80 210,10 210,130 
+             C 210,250 70,370 0,430 
+             C -70,370 -210,250 -210,130 
+             C -210,10 -120,-80 0,-80 Z" 
+          fill="none" stroke="#234E8C" stroke-width="14" stroke-dasharray="16 12"/>
+
+    <!-- Pin Hole / Opening where cat pops out -->
+    <circle cx="0" cy="120" r="140" fill="#FFFFFF" stroke="#234E8C" stroke-width="12"/>
+
+    <!-- Friendly Cat Body & Head emerging from pin -->
+    <g transform="translate(0, -20)">
+      <!-- Cat Head -->
+      <circle cx="0" cy="40" r="125" fill="#234E8C"/>
+      <polygon points="-115,-30 -145,-155 -35,-90" fill="#234E8C"/>
+      <polygon points="115,-30 145,-155 35,-90" fill="#234E8C"/>
+      <polygon points="-105,-40 -130,-130 -50,-85" fill="#F5623D"/>
+      <polygon points="105,-40 130,-130 50,-85" fill="#F5623D"/>
+
+      <!-- Eyes & Face -->
+      <circle cx="-45" cy="35" r="38" fill="#FFFFFF"/>
+      <circle cx="45" cy="35" r="38" fill="#FFFFFF"/>
+      <circle cx="-40" cy="35" r="22" fill="#234E8C"/>
+      <circle cx="40" cy="35" r="22" fill="#234E8C"/>
+      <circle cx="-32" cy="28" r="8" fill="#FFFFFF"/>
+      <circle cx="48" cy="28" r="8" fill="#FFFFFF"/>
+
+      <polygon points="0,75 -12,62 12,62" fill="#F5623D"/>
+      <path d="M -26,88 C -12,102 0,98 0,84 C 0,98 12,102 26,88" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+      
+      <!-- True North Compass Needle on Cat Head -->
+      <line x1="0" y1="-85" x2="0" y2="-180" stroke="#F5623D" stroke-width="20" stroke-linecap="round"/>
+      <polygon points="0,-215 -25,-165 0,-175 25,-165" fill="#F5623D"/>
+
+      <!-- Waving Hello Paw (Right Hand Raised - Welcoming travellers!) -->
+      <g transform="translate(130, 20) rotate(-25)">
+        <rect x="-24" y="-70" width="48" height="90" rx="24" fill="#234E8C"/>
+        <!-- Paw pads -->
+        <circle cx="0" cy="-45" r="14" fill="#F5623D"/>
+        <circle cx="-12" cy="-60" r="6" fill="#F5623D"/>
+        <circle cx="0" cy="-66" r="6" fill="#F5623D"/>
+        <circle cx="12" cy="-60" r="6" fill="#F5623D"/>
+      </g>
+      <!-- Left Paw resting on pin edge -->
+      <rect x="-145" y="90" width="48" height="60" rx="24" fill="#234E8C"/>
+    </g>
+  </g>
+</svg>

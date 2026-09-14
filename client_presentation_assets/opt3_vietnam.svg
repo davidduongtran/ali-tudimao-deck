@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <rect width="800" height="800" fill="#FBF4E9"/>
+  <g transform="translate(400, 420)">
+    <!-- Cat Head & Body in Continuous Stroke -->
+    <path d="M 0,-140
+             C 40,-140 75,-135 105,-120
+             L 175,-250 L 180,-90
+             C 215,-40 235,20 225,95
+             C 210,185 130,250 0,250
+             C -130,250 -210,185 -225,95
+             C -235,20 -215,-40 -175,-90
+             L -180,-250 L -105,-120
+             C -75,-135 -40,-140 0,-140 Z"
+          fill="none" stroke="#234E8C" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+          
+    <!-- Sitting Body & Paws Loop -->
+    <path d="M -110,230 C -160,260 -180,310 -150,370 C -120,410 120,410 150,370 C 180,310 160,260 110,230"
+          fill="none" stroke="#234E8C" stroke-width="30" stroke-linecap="round"/>
+    
+    <!-- Eyes: Gentle smiling curves -->
+    <path d="M -110,20 C -90,-10 -65,-10 -45,20" fill="none" stroke="#234E8C" stroke-width="24" stroke-linecap="round"/>
+    <path d="M 45,20 C 65,-10 95,-10 110,20" fill="none" stroke="#234E8C" stroke-width="24" stroke-linecap="round"/>
+    
+    <!-- VIETNAMESE FOLK CHEEK SPIRALS (Xoáy Má Dân Gian Đông Hồ / Âm Dương Đất Việt) -->
+    <!-- Replaces generic whiskers with Vietnamese auspicious spirals -->
+    <path d="M -160,85 A 24,24 0 1,0 -130,70 A 14,14 0 1,0 -145,60" fill="none" stroke="#F5623D" stroke-width="16" stroke-linecap="round"/>
+    <path d="M 160,85 A 24,24 0 1,1 130,70 A 14,14 0 1,1 145,60" fill="none" stroke="#F5623D" stroke-width="16" stroke-linecap="round"/>
+    
+    <!-- Cat Muzzle & Nose -->
+    <path d="M -45,105 C -22,135 0,130 0,100 C 0,130 22,135 45,105" fill="none" stroke="#234E8C" stroke-width="24" stroke-linecap="round"/>
+    <polygon points="0,75 -10,88 10,88" fill="#F5623D"/>
+
+    <!-- VIETNAMESE LOTUS BUD TRUE NORTH COMPASS NEEDLE (Búp Sen Hướng Bắc) -->
+    <!-- Arrowhead stylized as an elegant Vietnamese Lotus Bud petal -->
+    <line x1="0" y1="-140" x2="0" y2="-260" stroke="#F5623D" stroke-width="30" stroke-linecap="round"/>
+    <!-- Lotus Bud Petals pointing up -->
+    <path d="M 0,-325 
+             C -24,-290 -38,-260 -30,-240 
+             C -20,-220 0,-245 0,-245 
+             C 0,-245 20,-220 30,-240 
+             C 38,-260 24,-290 0,-325 Z" 
+          fill="#F5623D"/>
+    <circle cx="0" cy="-245" r="7" fill="#FBF4E9"/>
+  </g>
+</svg>

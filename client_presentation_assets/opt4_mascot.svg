@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <rect width="800" height="800" fill="#FBF4E9"/>
+  <g transform="translate(400, 420)">
+    <!-- Body -->
+    <path d="M -120,60 C -150,180 -80,240 0,240 C 80,240 150,180 120,60 Z" fill="#234E8C"/>
+    <circle cx="0" cy="100" r="70" fill="#FFFFFF"/>
+    
+    <!-- Head with Forehead Star -->
+    <path d="M -180,-40 C -195,100 -120,200 0,200 C 120,200 195,100 180,-40 C 170,-100 140,-130 100,-130 C 60,-130 0,-90 0,-90 C 0,-90 -60,-130 -100,-130 C -140,-130 -170,-100 -180,-40 Z" fill="#234E8C"/>
+    <polygon points="-180,-30 -160,-190 -70,-120" fill="#234E8C"/>
+    <polygon points="180,-30 160,-190 70,-120" fill="#234E8C"/>
+    <polygon points="-160,-40 -145,-155 -90,-110" fill="#F5623D"/>
+    <polygon points="160,-40 145,-155 90,-110" fill="#F5623D"/>
+    
+    <!-- Big Eyes -->
+    <ellipse cx="-70" cy="20" rx="28" ry="36" fill="#FFFFFF"/>
+    <ellipse cx="70" cy="20" rx="28" ry="36" fill="#FFFFFF"/>
+    <circle cx="-70" cy="20" r="16" fill="#234E8C"/>
+    <circle cx="70" cy="20" r="16" fill="#234E8C"/>
+    <circle cx="-64" cy="14" r="6" fill="#FFFFFF"/>
+    <circle cx="76" cy="14" r="6" fill="#FFFFFF"/>
+
+    <!-- Forehead Compass Star -->
+    <g transform="translate(0, -60)">
+      <polygon points="0,-40 8,-8 40,0 8,8 0,40 -8,8 -40,0 -8,-8" fill="#F5623D"/>
+      <circle cx="0" cy="0" r="4" fill="#FFFFFF"/>
+    </g>
+
+    <polygon points="0,65 -12,50 12,50" fill="#F5623D"/>
+    <path d="M -24,78 C -12,92 0,88 0,74 C 0,88 12,92 24,78" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Paws -->
+    <circle cx="-50" cy="210" r="22" fill="#234E8C"/>
+    <circle cx="50" cy="210" r="22" fill="#234E8C"/>
+  </g>
+</svg>
